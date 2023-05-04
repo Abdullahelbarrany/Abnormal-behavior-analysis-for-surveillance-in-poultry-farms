@@ -1,0 +1,2 @@
+random_forest_classifier scored 55.56% on E:\University\Semester 6\Grad\CHICK_t\CHICK_t\object_tracking\object_tracking\New folder\trajectories
+
