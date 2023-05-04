@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import time
 
+#...
 
 lk_params = dict(winSize  = (15, 15),
                 maxLevel = 2,
