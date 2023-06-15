@@ -1,0 +1,151 @@
+import numpy as np
+import csv
+from scipy.stats import skew
+import statistics
+import csv
+import numpy as np
+
+rows = []
+
+with open('onlyv.csv', 'r') as csvfile:
+    csvreader = csv.reader(csvfile)
+    for row in csvreader:
+        rows.append(row)
+
+# csvfile.close() - No need to explicitly close the file when using 'with' statement
+
+rows[0][0] = 877
+line = []
+arr = np.array(rows, dtype=int)
+start=len(arr[0]) // 2
+print(start)
+for j in range(len(arr)):
+    x = []
+    for i in range(0, start):
+       
+        x.append(str(arr[j][i]))
+        # print(i)
+    # print(len(x))
+
+    with open('nofalz.csv', 'a+', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(x)
+    x = []
+    for i in range(start, len(arr[j])):
+        
+        x.append(str(arr[j][i]))
+
+    with open('nofalz.csv', 'a+', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(x)
+
+    break
+
+#remove spaces:
+import csv
+
+# for i in range(89,90):
+#     input_file = str(i)+'.csv'
+#     output_file = str(i)+'e.csv'
+
+#     with open(input_file, 'r', newline='') as file_in, open(output_file, 'w', newline='') as file_out:
+#         reader = csv.reader(file_in)
+#         writer = csv.writer(file_out)
+        
+#         for row in reader:
+#             if len(row) > 0 and row[0].strip() != '':
+#                 writer.writerow(row)
+
+
+
+# import openpyxl
+
+# # Load the Excel file
+# file_path = '0.csv'
+# workbook = openpyxl.load_workbook(file_path)
+
+# # Select the active sheet
+# sheet = workbook.active
+
+# # Get the values in column A
+# column_a = sheet['A']
+
+# # Iterate through the cells in column A in reverse order
+# for cell in reversed(column_a):
+#     # Check if the cell is empty
+#     if cell.value is None:
+#         # Delete the empty cell
+#         sheet.delete_rows(cell.row)
+
+# # Save the modified Excel file
+# modified_file_path = '0.csv'
+# workbook.save(modified_file_path)
+
+
+
+
+
+
+# import csv
+
+# def save_rows_as_csv(filename):
+#     with open(filename, 'r') as file:
+#         reader = csv.reader(file)
+#         headers = next(reader)  # Skip the header row
+
+#         for row_num, row in enumerate(reader, start=1):
+#             # Create a new CSV file for each row
+#             output_filename = f'row_{row_num}.csv'
+#             with open(output_filename, 'w', newline='') as output_file:
+#                 writer = csv.writer(output_file)
+#                 writer.writerow(headers)  # Write the header row
+#                 writer.writerow(row)  # Write the current row
+                
+#             print(f'Saved row {row_num} as {output_filename}')
+#             break
+        
+# # Example usage
+# dataset_filename = 'onlyv.csv'
+# save_rows_as_csv(dataset_filename)
+# import csv
+
+# def save_rows_as_csv(filename):
+#     with open(filename, 'r') as file:
+#         reader = csv.reader(file)
+#         headers = next(reader)  # Skip the header row
+
+#         for row_num, row in enumerate(reader, start=0):
+#             # Create a new CSV file for each row
+#             output_filename = f'row_{row_num}.csv'
+#             with open(output_filename, 'w', newline='') as output_file:
+#                 writer = csv.writer(output_file)
+#                 writer.writerow(headers)  # Write the header row
+#                 writer.writerow(row)  # Write the current row
+
+#             print(f'Saved row {row_num} as {output_filename}')
+
+
+# # Example usage
+# dataset_filename = 'onlyv.csv'
+# save_rows_as_csv(dataset_filename)
+
+# import csv
+
+# def save_rows_as_csv(filename):
+#     with open(filename, 'r') as file:
+#         reader = csv.reader(file)
+#         # headers = next(reader)  # Skip the header row
+
+#         for row_num, row in enumerate(reader, start=0):
+#             # Create a new CSV file for each row
+#             output_filename = f'row_{row_num}.csv'
+#             with open(output_filename, 'w', newline='') as output_file:
+#                 writer = csv.writer(output_file)
+#                 writer.writerow([header] for header in reader)  # Write the header row
+#                 writer.writerow(row)  # Write the current row
+
+#             print(f'Saved row {row_num} as {output_filename}')
+
+# # Example usage
+# dataset_filename = 'onlyv.csv'
+# save_rows_as_csv(dataset_filename)
